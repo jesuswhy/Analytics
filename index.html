@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Аналитика с Google Sheets</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 90%;
+            margin: 50px auto;
+        }
+        canvas {
+            margin-bottom: 40px;
+        }
+        .filter {
+            margin-bottom: 20px;
+        }
+        input, select {
+            padding: 10px;
+            margin-right: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .btn {
+            padding: 10px 15px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Аналитика по категориям и товарам</h1>
+
+    <div class="filter">
+        <input type="text" id="categoryFilter" placeholder="Поиск по категории">
+        <input type="text" id="productFilter" placeholder="Поиск по товару">
+        <select id="monthFilter">
+            <option value="Сентябрь 2024">Сентябрь 2024</option>
+            <option value="Август 2024">Август 2024</option>
+            <!-- Добавить остальные месяцы -->
+        </select>
+        <button class="btn" onclick="updateCharts()">Применить фильтр</button>
+    </div>
+
+    <canvas id="ordersChart"></canvas>
+    <canvas id="revenueChart"></canvas>
+    <canvas id="avgCheckChart"></canvas>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.2.1/dist/chart.umd.min.js"></script>
+<script src="script.js"></script> <!-- Логика для графиков -->
+</body>
+</html>
